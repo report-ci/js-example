@@ -1,0 +1,11 @@
+language: javascript
+sudo: false
+
+install:
+  - npm install -g qunit
+
+script:
+  - qunit tests/qunit-tests.js
+
+after_script:
+  - python <(curl -s https://raw.githubusercontent.com/report-ci/scripts/master/upload.py)
