@@ -11,7 +11,7 @@ env:
 
 install:
   - npm install -g $INSTALL
-  - if [ -z "$LOCAL_INSTALL" ]; npm install $LOCAL_INSTALL; fi
+  - if [ -z "$LOCAL_INSTALL" ]; then npm install $LOCAL_INSTALL; fi
   - set -o pipefail
 
 script:
