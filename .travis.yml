@@ -1,14 +1,17 @@
 language: node_js
 sudo: false
+node_js:
+  - "node"
+  - "8"
 
 install:
   - npm install -g qunit mocha tape ava
 
 env:
-  - FRAMEWORK=ava   CMD=ava tests/ava.js -t > ava.tap
-  - FRAMEWORK=mocha CMD=mocha tests/chai.js tests/unit-js.js -R json > mocha.json
-  - FRAMEWORK=qunit CMD=qunit tests/qunit-tests.js > qunit.tap
-  - FRAMEWORK=tape  CMD=tape tests/tape.js > tape.tap
+  - FRAMEWORK=ava   CMD="ava tests/ava.js -t > ava.tap"
+  - FRAMEWORK=mocha CMD="mocha tests/chai.js tests/unit-js.js -R json > mocha.json"
+  - FRAMEWORK=qunit CMD="qunit tests/qunit-tests.js > qunit.tap"
+  - FRAMEWORK=tape  CMD="tape tests/tape.js > tape.tap"
 script:
   - $CMD
 
