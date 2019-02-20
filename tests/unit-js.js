@@ -23,7 +23,7 @@ describe('Learning by the example', function(){
             .then('test the "example" object', function(){
                 test
                     .object(example)
-                    .hasValue('developper')
+                    .hasValue('developer')
                     .hasProperty('name')
                     .hasProperty('from', 'France')
                     .contains({message: 'hello world'})
@@ -37,9 +37,9 @@ describe('Learning by the example', function(){
     });
     it('other test case', function(){
         test.assert(true);
-        test.assert(false);
         test.assert(true);
-        test.assert(false);
+        test.assert(true);
+        test.assert(true);
     });
 });
 

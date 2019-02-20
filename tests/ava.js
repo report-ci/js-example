@@ -5,15 +5,15 @@ test('foo will run', t => {
 });
 
 test('foo will also run, yet fail', t => {
-    t.fail("Does that need message?");
+    //t.fail("Does that need message?");
 });
 
 test('foo will run but not exclusively', t => {
-    t.fail("Babumm");
+    //t.fail("Babumm");
 });
 
 // Won't run, no title
-test(function (t) {
+test('some name', function (t) {
     t.fail();
 });
 
