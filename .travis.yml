@@ -4,16 +4,16 @@ node_js:
   - "node"
 
 env:
-  - FRAMEWORK=ava   CMD="ava tests/ava.js -t > ava.tap" INSTALL=ava
-  - FRAMEWORK=mocha CMD="mocha tests/chai.js tests/unit-js.js -R json > mocha.json" INSTALL="mocha chai"
-  - FRAMEWORK=qunit CMD="qunit tests/qunit-tests.js > qunit.tap" INSTALL=qunit
-  - FRAMEWORK=tape  CMD="tape tests/tape.js > tape.tap" INSTALL=tape
+  - FRAMEWORK=ava   CMD="ava tests/ava.js -t"                          OUTFILE=ava.tap    INSTALL=ava
+  - FRAMEWORK=mocha CMD="mocha tests/chai.js tests/unit-js.js -R json" OUTFILE=mocha.json INSTALL="mocha chai"
+  - FRAMEWORK=qunit CMD="qunit tests/qunit-tests.js"                   OUTFILE=qunit.tap  INSTALL=qunit
+  - FRAMEWORK=tape  CMD="tape tests/tape.js"                           OUTFILE=tape.tap   INSTALL=tape
 
 install:
   - npm install -g $INSTALL
 
 script:
-  - $CMD
+  - $CMD | tee $OUTFILE
 
 after_script:
   - if [ "$FRAMEWORK" != "ava" ]; then FRAMEWORK_OPT=--framework=$FRAMEWORK; fi
