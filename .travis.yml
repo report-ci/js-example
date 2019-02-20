@@ -5,13 +5,12 @@ node_js:
 
 env:
   - FRAMEWORK=ava   CMD="ava tests/ava.js -t"                          OUTFILE=ava.tap    INSTALL=ava
-  - FRAMEWORK=mocha CMD="mocha tests/chai.js tests/unit-js.js -R json" OUTFILE=mocha.json INSTALL=mocha LOCAL_INSTALL=chai
+  - FRAMEWORK=mocha CMD="mocha tests/chai.js tests/unit-js.js -R json" OUTFILE=mocha.json INSTALL="mocha chai"
   - FRAMEWORK=qunit CMD="qunit tests/qunit-tests.js"                   OUTFILE=qunit.tap  INSTALL=qunit
-  - FRAMEWORK=tape  CMD="tape tests/tape.js"                           OUTFILE=tape.tap   INSTALL=tape  LOCAL_INSTALL=tape
+  - FRAMEWORK=tape  CMD="tape tests/tape.js"                           OUTFILE=tape.tap   INSTALL=tape
 
 install:
-  - npm install -g $INSTALL
-  - if [ -z "$LOCAL_INSTALL" ]; then npm install $LOCAL_INSTALL; fi
+  - npm install $INSTALL
   - set -o pipefail
 
 script:
