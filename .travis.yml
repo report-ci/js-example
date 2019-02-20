@@ -11,10 +11,12 @@ env:
 
 install:
   - npm install -g $INSTALL
+  - set -o pipefail
 
 script:
   - $CMD | tee $OUTFILE
 
 after_script:
+  - ls
   - if [ "$FRAMEWORK" != "ava" ]; then FRAMEWORK_OPT=--framework=$FRAMEWORK; fi
   - curl -s https://raw.githubusercontent.com/report-ci/scripts/master/upload.py | python - $FRAMEWORK_OPT
