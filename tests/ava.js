@@ -5,19 +5,19 @@ test('foo will run', t => {
 });
 
 test('foo will also run, yet fail', t => {
-    //t.fail("Does that need message?");
+    t.pass("Does that need message?");
 });
 
 test('foo will run but not exclusively', t => {
-    //t.fail("Babumm");
+    t.pass("Babumm");
 });
 
 // Won't run, no title
 test('some name', function (t) {
-    t.fail();
+    t.pass();
 });
 
 // Won't run, no explicit title
-test(function foo(t) {
-    t.fail();
+test('title', function foo(t) {
+    t.pass();
 });

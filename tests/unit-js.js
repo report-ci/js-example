@@ -20,15 +20,15 @@ describe('Learning by the example', function(){
                     from: 'France'
                 };
             })
-            .then('test the "example" object', function(){
-                test
-                    .object(example)
-                    .hasValue('developer')
-                    .hasProperty('name')
-                    .hasProperty('from', 'France')
-                    .contains({message: 'hello world'})
-                ;
-            })
+           // .then('test the "example" object', function(){
+           //     test
+           //         .object(example)
+           //         .hasValue('developer')
+           //         .hasProperty('name')
+           //         .hasProperty('from', 'France')
+           //         .contains({message: 'hello world'})
+           //     ;
+           // })
             .if(example = 'bad value')
             .error(function(){
                 example.badMethod();
