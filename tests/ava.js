@@ -5,7 +5,7 @@ test('foo will run', t => {
 });
 
 test('foo will also run, yet fail', t => {
-    t.pass("Does that need message?");
+    t.passasd("Does that need message?");
 });
 
 test('foo will run but not exclusively', t => {

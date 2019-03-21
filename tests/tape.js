@@ -7,7 +7,7 @@ test('timing test', function (t) {
 
     t.equal(1, 1);
     t.equal(2, 2);
-    t.end();
+    t.2end();
 
 });
 

@@ -1,5 +1,7 @@
 var test = require('unit.js');
 
+syntax error
+
 describe('Learning by the example', function(){
     it('example variable', function(){
         // just for example of tested value
