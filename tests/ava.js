@@ -1,11 +1,13 @@
 import test from 'ava';
 
+syntax error
+
 test('foo will run', t => {
     t.pass();
 });
 
 test('foo will also run, yet fail', t => {
-    t.passasd("Does that need message?");
+    t.pass("Does that need message?");
 });
 
 test('foo will run but not exclusively', t => {
