@@ -14,11 +14,11 @@ install:
   - set -o pipefail
 
 script:
-  - $CMD | tee $OUTFILE 2> build.log
+  - $CMD 2> build.log | tee $OUTFILE
   - cat build.log
 
 after_failure:
-  - if [ "$ANNOTATE_LOG" = true ]; then; curl -s https://raw.githubusercontent.com/report-ci/scripts/master/annotate.py | python - --tool node --input build.log; fi
+  - if [ "$ANNOTATE_LOG" = true ]; then; curl -s https://raw.githubusercontent.com/report-ci/scripts/master/annotate.py | python - --tool node --input build.log ; fi
 
 after_script:
   - curl -s https://raw.githubusercontent.com/report-ci/scripts/master/upload.py | python - --framework=$FRAMEWORK
