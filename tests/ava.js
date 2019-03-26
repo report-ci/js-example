@@ -1,7 +1,5 @@
 import test from 'ava';
 
-syntax error
-
 test('foo will run', t => {
     t.pass();
 });
