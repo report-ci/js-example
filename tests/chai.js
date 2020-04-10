@@ -2,6 +2,8 @@ var assert = require('assert');
 var expect = require('chai').expect;
 var should = require('chai').should();
 
+syntax error
+
 it('should return true if valid user id', function(){
     expect(true).to.be.true;
 });
