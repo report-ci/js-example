@@ -1,4 +1,4 @@
-import test from 'ava';
+const test = require('ava');
 
 test('foo will run', t => {
     t.pass();
